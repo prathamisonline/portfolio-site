@@ -69,9 +69,12 @@ const Contact: React.FC = () => {
                       href={social.url} 
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-6 py-3 border border-neutral-800 rounded-full hover:bg-white hover:text-black hover:border-white transition-all duration-300 text-sm font-bold uppercase tracking-wider text-neutral-400"
+                      className="relative group inline-flex overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-brand-orange focus:ring-offset-2 focus:ring-offset-neutral-900"
                     >
-                        {social.name}
+                        <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#f97316_0%,#393BB2_50%,#f97316_100%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <span className="relative flex w-full items-center justify-center rounded-full bg-neutral-900 px-6 py-3 text-sm font-bold uppercase tracking-wider text-neutral-400 transition-all duration-300 group-hover:bg-neutral-800 group-hover:text-white">
+                            {social.name}
+                        </span>
                     </a>
                 ))}
               </div>
@@ -134,13 +137,14 @@ const Contact: React.FC = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`w-full py-4 rounded-xl font-bold text-black uppercase tracking-wider transition-all duration-300 ${
-                isSent 
-                  ? 'bg-green-500 hover:bg-green-400' 
-                  : 'bg-white hover:bg-neutral-200'
-              } disabled:opacity-70 disabled:cursor-not-allowed`}
+              className="relative w-full group overflow-hidden rounded-xl p-[1px] focus:outline-none focus:ring-2 focus:ring-brand-orange focus:ring-offset-2 focus:ring-offset-neutral-900 disabled:opacity-70 disabled:cursor-not-allowed"
             >
-              {isSubmitting ? 'Sending...' : isSent ? 'Message Sent!' : 'Send Message'}
+              <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#f97316_0%,#393BB2_50%,#f97316_100%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <span className={`relative flex w-full items-center justify-center rounded-xl px-4 py-4 font-bold uppercase tracking-wider transition-all duration-300 ${
+                isSent ? 'bg-green-500 text-white' : 'bg-neutral-900 text-white group-hover:bg-neutral-800'
+              }`}>
+                {isSubmitting ? 'Sending...' : isSent ? 'Message Sent!' : 'Send Message'}
+              </span>
             </button>
           </form>
         </motion.div>

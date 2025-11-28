@@ -99,10 +99,13 @@ const Hero: React.FC = () => {
                   href={RESUME_LINK} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 bg-white text-black font-bold uppercase tracking-wider rounded-full hover:bg-neutral-200 transition-colors text-sm"
+                  className="relative group inline-flex overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-brand-orange focus:ring-offset-2 focus:ring-offset-neutral-900"
                 >
-                  Download Resume
-                  <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                  <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#f97316_0%,#393BB2_50%,#f97316_100%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <span className="relative inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-bold text-black uppercase tracking-wider transition-colors hover:bg-neutral-100">
+                    Download Resume
+                    <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                  </span>
                 </a>
             </div>
         </div>
